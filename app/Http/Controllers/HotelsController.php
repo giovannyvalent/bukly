@@ -15,7 +15,7 @@ class HotelsController extends Controller
     public function index()
     {
         $data = ['hotels'];
-        $hotels = Hotels::with('rooms')->ordderBy('created_at', 'desc')->paginate(30);
+        $hotels = Hotels::with('rooms')->orderBy('created_at', 'desc')->paginate(30);
 
         return view('hotels.index', [
             'hotels' => $hotels

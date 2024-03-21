@@ -15,7 +15,7 @@ class RoomsController extends Controller
     public function index()
     {
         $data = ['rooms'];
-        $rooms = Rooms::ordderBy('created_at', 'desc')->paginate(20);
+        $rooms = Rooms::orderBy('created_at', 'desc')->paginate(20);
 
         return view('rooms.index', [
             'rooms' => $rooms
